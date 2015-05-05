@@ -7,7 +7,7 @@
   var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   
-  var shortDayName = [];
+  var shortDayName = dayNames.map(function (element) { return element.substring(0,3) });
   var monthsLength = {};
 
   var currentYear = date.getYear();
@@ -15,10 +15,6 @@
   var currentDay = date.getDate();
 
   var currentMonthName = monthNames[currentMonth];
-
-  dayNames.forEach(function (element) {
-    shortDayName.push(element.substring(0, 3));
-  });
 
   var getMonthLength = function (month, year) {
     var startDate = new Date(year, month, 1);
